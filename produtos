@@ -1,0 +1,20 @@
+import requests
+import urllib.parse
+
+def buscar_produtos(query):
+    query_encoded = urllib.parse.quote(query)
+
+    return [
+        {
+            "titulo": f"{query} - Shopee",
+            "preco": "Ver no site",
+            "img": "https://via.placeholder.com/150",
+            "link": f"https://shopee.com.br/search?keyword={query_encoded}"
+        },
+        {
+            "titulo": f"{query} - AliExpress",
+            "preco": "Ver no site",
+            "img": "https://via.placeholder.com/150",
+            "link": f"https://www.aliexpress.com/wholesale?SearchText={query_encoded}"
+        }
+    ]
